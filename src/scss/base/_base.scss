@@ -1,0 +1,30 @@
+@use "../utils/variables" as *;
+@use "../utils/btn-reset" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $White;
+  color: $Very-Dark-Blue;
+  font-family: $Font-Family;
+  font-size: $Font-Size;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  @extend %btn-reset;
+
+  * {
+    pointer-events: none;
+  }
+}

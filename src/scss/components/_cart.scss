@@ -1,0 +1,86 @@
+@use "../utils/variables" as *;
+@use "../utils/flex-center" as *;
+@use "../utils/btn-reset" as *;
+
+.cart {
+  position: absolute;
+  right: 0;
+  bottom: -200px;
+  width: 95%;
+  max-width: 350px;
+  min-height: 220px;
+  border-radius: 10px;
+  background-color: $White;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  &__title {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid $Grayish-Blue;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &__content {
+    @extend %flex-center;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    padding: 20px;
+
+    &--empty {
+      padding-top: 65px;
+      color: $Dark-Grayish-Blue;
+      font-weight: bold;
+    }
+  }
+
+  &__product {
+    @extend %flex-center;
+    margin-bottom: 20px;
+    color: $Dark-Grayish-Blue;
+    gap: 15px;
+
+    &-img {
+      max-width: 50px;
+      border-radius: 5px;
+    }
+
+    &-info {
+      line-height: 1.6;
+    }
+
+    &-total-price {
+      color: $Black;
+      font-weight: bold;
+    }
+
+    &-remove-icon {
+      transition: 0.3s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__checkout {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 17px 0;
+    transition: 0.3s;
+    border-radius: 10px;
+    background-color: $Orange;
+    color: $White;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

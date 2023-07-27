@@ -1,0 +1,29 @@
+// Colors
+
+// Primary
+
+$Orange: hsl(26, 100%, 55%);
+$Pale-Orange: hsl(25, 100%, 94%);
+
+// Neutral
+
+$Very-Dark-Blue: hsl(220, 13%, 13%);
+$Dark-Grayish-Blue: hsl(219, 9%, 45%);
+$Grayish-Blue: hsl(220, 14%, 75%);
+$Light-Grayish-Blue: hsl(223, 64%, 98%);
+$White: hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 0%); 
+$Black-75: hsla(0, 0%, 0%, 0.751); //(with 75% opacity for lightbox background)
+
+// Typography
+
+$Font-Size: 16px;
+$Font-Family: 'Kumbh Sans', sans-serif;
+$Font-Thin: 400;
+$Font-Bold: 700;
+
+// Breakpoints
+
+$Desktop: 1350px;
+$Tablet: 1000px;
+$Mobile: 500px;

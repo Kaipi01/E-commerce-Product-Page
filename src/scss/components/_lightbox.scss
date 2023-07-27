@@ -1,0 +1,76 @@
+@use "../utils/variables" as *;
+@use "../utils/flex-center" as *;
+
+.lightbox {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $Black-75;
+  display: grid;
+  place-content: center;
+
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -30px;
+    right: 0;
+
+    &-icon {
+        transition: 0.3s;
+        fill: $White;
+    }
+
+    &:hover, &:focus, &:active {    
+        svg {
+            fill: $Orange;          
+        }
+      }
+  }
+
+  &__switch-img {
+    position: absolute;
+    background-color: $White;
+    top: 50%;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(calc(-50% - 70px));
+
+    &-next {
+      right: -23px;
+    }
+
+    &-prev {
+      left: -23px;
+    }
+
+    &:hover, &:focus, &:active {    
+      svg {
+        path {
+          transition: 0.3s;
+          stroke: $Orange;
+        }
+      }
+    }
+  }
+  .product__change-img {
+    width: 85%;
+    margin: 20px auto;
+  }
+}

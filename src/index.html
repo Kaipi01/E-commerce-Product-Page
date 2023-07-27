@@ -1,44 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../dist/main.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+  <nav class="nav">
+    <button class="nav__menu-btn">
+      <span class="visually-hide">Menu</span>
+      <img class="nav__menu-btn-icon" src="./images/icon-menu.svg" alt="Menu" aria-hidden="true">
+    </button>
 
-  Sneaker Company
+    <a class="nav__logo" href="#">
+      <img class="nav__logo-icon" src="./images/logo.svg" alt="sneakers logo">
+    </a>
 
-  Fall Limited Edition Sneakers
+    <ul class="nav__menu">
+      <li><a class="nav__menu-link" href="#Collections">Collections</a></li>
+      <li><a class="nav__menu-link" href="#Men">Men</a></li>
+      <li><a class="nav__menu-link" href="#Women">Women</a></li>
+      <li><a class="nav__menu-link" href="#About">About</a></li>
+      <li><a class="nav__menu-link" href="#Contact">Contact</a></li>
+    </ul>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+    <button class="nav__cart">
+      <span class="visually-hide">Cart</span>
+      <span class="nav__cart-number">3</span>
+      <svg class="nav__cart-icon" aria-hidden="true" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"></path></svg>
+    </button>
 
-  $125.00
-  50%
-  $250.00
+    <article class="cart" hidden>
+      <h2 class="cart__title">Cart</h2>
+      <div class="cart__content"> <!--  cart__content--empty -->
+        
+        <!--  Your cart is empty. -->
+         <div class="cart__product">
+            <img class="cart__product-img" src="./images/image-product-1-thumbnail.jpg" alt="" aria-hidden="true">
+            <p class="cart__product-info">
+              Fall Limited Edition Sneakers
+              $125.00 x <span class="cart__product-amount">3</span>
+              <span class="cart__product-total-price">$375.00</span>
+            </p>
+            <button class="cart__product-remove">
+              <span class="visually-hide">Delete product</span>
+              <img class="cart__product-remove-icon" src="./images/icon-delete.svg" alt="X" aria-hidden="true">
+            </button>
+          </div>
+          <button class="cart__checkout">Checkout</button>
+      </div>
+    </article>
 
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <a class="nav__profile" href="#Profile">
+      <span class="visually-hide">Your Profile</span>
+      <img class="nav__profile-img" src="./images/image-avatar.png" alt="Profile" aria-hidden="true">
+    </a>
+  </nav>
+
+  <main class="product">
+
+    <div class="lightbox">
+      <div class="lightbox__content">
+        <img class="lightbox__img" class="product__change-img-thumbnail" src="./images/image-product-1.jpg" alt="product image 1">
+        <button class="lightbox__close">
+          <span class="visually-hide">close</span>
+          <svg class="lightbox__close-icon" aria-hidden="true" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"></path></svg>
+        </button>
+        <button class="lightbox__switch-img lightbox__switch-img-next">
+          <span class="visually-hide">next image</span>
+          <svg class="lightbox__switch-img-icon" aria-hidden="true" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+          </svg>
+        </button>
+        <button class="lightbox__switch-img lightbox__switch-img-prev">
+          <span class="visually-hide">previous image</span>
+          <svg class="lightbox__switch-img-icon" aria-hidden="true" width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div class="product__change-img">
+          <button class="product__change-img-btn product__change-img-btn--active" data-product="1">
+            <span class="visually-hide">Show product image 1</span>
+            <img class="product__change-img-thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="" aria-hidden="true">
+          </button>
+          <button class="product__change-img-btn" data-product="2">
+            <span class="visually-hide">Show product image 2</span>
+            <img class="product__change-img-thumbnail" src="./images/image-product-2-thumbnail.jpg" alt="" aria-hidden="true">
+          </button>
+          <button class="product__change-img-btn" data-product="3">
+            <span class="visually-hide">Show product image 3</span>
+            <img class="product__change-img-thumbnail" src="./images/image-product-3-thumbnail.jpg" alt="" aria-hidden="true">
+          </button>
+          <button class="product__change-img-btn" data-product="4">
+            <span class="visually-hide">Show product image 4</span>
+            <img class="product__change-img-thumbnail" src="./images/image-product-4-thumbnail.jpg" alt="" aria-hidden="true">
+          </button>
+        </div>
+     </div>
+    </div>
+
+    <div class="product__content-left">
+      <img class="product__img" src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
+      <div class="product__change-img">
+        <button class="product__change-img-btn product__change-img-btn--active" data-product="1">
+          <span class="visually-hide">Show product image 1</span>
+          <img class="product__change-img-thumbnail" src="./images/image-product-1-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+        <button class="product__change-img-btn" data-product="2">
+          <span class="visually-hide">Show product image 2</span>
+          <img class="product__change-img-thumbnail" src="./images/image-product-2-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+        <button class="product__change-img-btn" data-product="3">
+          <span class="visually-hide">Show product image 3</span>
+          <img class="product__change-img-thumbnail" src="./images/image-product-3-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+        <button class="product__change-img-btn" data-product="4">
+          <span class="visually-hide">Show product image 4</span>
+          <img class="product__change-img-thumbnail" src="./images/image-product-4-thumbnail.jpg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+
+    <div class="product__content-right">
+      <span class="product__company">Sneaker Company</span>
+      <h1 class="product__name">Fall Limited Edition Sneakers</h1>
+      <p class="product__description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+
+      <p class="product__price">
+        <strong class="product__price-current">$125.00</strong>
+        <span class="product__price-discount">50%</span>
+        <s class="product__price-previous">$250.00</s>
+      </p>
+
+      <div class="product__amount">
+        <div class="product__amount-change">
+
+          <button class="product__amount-change-btn">
+            <span class="visually-hide">reduced quantity</span>
+            <img class="product__amount-change-btn-icon" src="./images/icon-minus.svg" alt="-">
+          </button>
+
+          <span class="product__amount-number">0</span>
+
+          <button class="product__amount-change-btn">
+            <span class="visually-hide">increase the quantity</span>
+            <img class="product__amount-change-btn-icon" src="./images/icon-plus.svg" alt="+">
+          </button>
+
+        </div>
+        <button class="product__add-to-cart-btn">
+          <svg class="product__add-to-cart-btn-icon" aria-hidden="true" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"></path></svg>
+          Add to cart
+        </button>
+      </div>
+    </div>
+
+  </main>
+  <script type="module" src="./js/main.js"></script>
 </body>
+
 </html>
